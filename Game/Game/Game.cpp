@@ -40,7 +40,7 @@ void Game::check_combinations() {
         for(int column = 0; column < GF.columns_amount; column++){
             int prev_size = GF.to_delete.size();
             check_neighbours(column, row, used);
-            int post_size = GF.to_delete.size();
+            auto post_size = GF.to_delete.size();
             if(post_size - prev_size < 3) {
                 GF.to_delete.erase(GF.to_delete.begin() + prev_size, GF.to_delete.end());
             }
@@ -182,10 +182,12 @@ bool Game::delete_blocks() {
         if(!GF.blocks[coordinates.y][coordinates.x]){
             continue;
         }
-        if(rand() % 100 < 5 && !GF.blocks[coordinates.y][coordinates.x]->is_bonus()){
-            if(rand()%2 == 0){
+        int bonus_chance = rand() % 100 + 1;
+        if(bonus_chance < 5 && !GF.blocks[coordinates.y][coordinates.x]->is_bonus()){
+            Bonus_t type = (Bonus_t)(rand() % (int)Bonus_t::END_LIST);
+            if(type == Bonus_t::BOMB){
                 bonuses.push_back(make_shared<BonusBomb>());
-            } else{
+            } else if (type == Bonus_t::PAINT){
                 bonuses.push_back(make_shared<BonusPaint>());
             }
             GF.blocks[coordinates.y][coordinates.x]->set_bonus(bonuses.back()->get_image_path(), bonuses.back().get());

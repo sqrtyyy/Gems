@@ -49,6 +49,7 @@ public:
      * @param window The window, where button should be drawn.
      */
     void draw(RenderWindow &window) const override;
+    
 };
 
 

@@ -17,7 +17,7 @@ using sf::Mouse;
  *
  * \details Class which creates the menu and operates with it.
  */
-class GameMenu: public GameApp {
+class GameMenu : public GameApp {
 protected:
     vector<Text> comments;///< The text information on the screen.
 protected:
@@ -25,12 +25,11 @@ protected:
 
 public:
 
-    bool OnEvent(sf::Event &event, RenderWindow &window) = 0;
+    bool OnEvent(sf::Event& event, RenderWindow& window) = 0;
 
-    void Draw(RenderWindow &window) const override;
+    void Draw(RenderWindow& window) const override;
 
+    //virtual ~GameMenu() override;
 
 };
-
-
 #endif //GEMS_GAMEMENU_H

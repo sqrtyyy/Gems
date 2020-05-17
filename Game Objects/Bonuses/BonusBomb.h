@@ -29,7 +29,7 @@ public:
      * @param block Coordinates of connected block.
      * @param gf Game objects.
      */
-    void activate(Vector2i& block, GameField &gf) override;
+    void activate(Vector2i& block, GameField &gf) const override ;
 };
 
 

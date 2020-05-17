@@ -79,6 +79,8 @@ public:
      */
     NextStep get_next() const;
 
+    virtual ~GameApp() = default;
+
 };
 
 
