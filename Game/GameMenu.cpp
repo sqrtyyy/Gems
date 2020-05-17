@@ -16,6 +16,7 @@ void GameMenu::Draw(RenderWindow &window) const {
     window.display();
 }
 
+
 //GameMenu::GameMenu(const string &background_texture_source) {
 //    load_background(background_texture_source);
 //}

@@ -32,6 +32,8 @@ public:
 
     void Draw(RenderWindow &window) const override;
 
+    //virtual ~GameStartMenu() override = default;
+
 };
 
 

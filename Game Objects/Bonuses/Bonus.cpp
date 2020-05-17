@@ -3,7 +3,7 @@
 ////
 #include "Bonus.h"
 
-string Bonus::get_image_path() {
+string Bonus::get_image_path() const {
     return image_path;
 }
 

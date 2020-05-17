@@ -9,7 +9,7 @@ BonusPaint::BonusPaint() {
     aims_num = 2;
 }
 
-void BonusPaint::activate(Vector2i &block, GameField &gf) {
+void BonusPaint::activate(Vector2i &block, GameField &gf) const {
     for(int i = 0; i < aims_num; i++){
         auto color = gf.blocks[block.y][block.x]->get_color();
         int plus_x = rand() % 2 == 1 ? 1 : -1;

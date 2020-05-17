@@ -20,11 +20,13 @@ int main()
                 window.close();
         }
         if(game->OnEvent(event,window)) {
-            if(game->get_next() == NextStep::GAME) {
+            auto next_step = game->get_next();
+            delete game;
+            if(next_step == NextStep::GAME) {
                 game = new Game("images\\game_back.png");
-            } else if(game->get_next() == NextStep::START_MENU){
+            } else if(next_step == NextStep::START_MENU){
                 game = new GameStartMenu("images\\main_menu.png");
-            } else if(game->get_next() == NextStep::END_MENU){
+            } else if(next_step == NextStep::END_MENU){
                 game = new EndGameMenu("images\\end_menu.png", *(Game*)game);
             }
         }

@@ -64,5 +64,7 @@ public:
      */
     FloatRect get_bounds() const;
 
+   // virtual ~Object() = default;
+
 };
 

@@ -4,7 +4,7 @@
 
 #include "BonusBomb.h"
 
-void BonusBomb::activate(Vector2i& block, GameField &gf) {
+void BonusBomb::activate(Vector2i& block, GameField &gf) const{
     for(int i = 0; i < aims_num; i++){
         int row, column;
         row = rand() % gf.blocks.size();
